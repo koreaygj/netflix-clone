@@ -1,0 +1,40 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.logo {
+  width: 8%;
+  object-fit: contain;
+  margin-left: 20px;
+}
+
+.navigation {
+  list-style: none;
+  align-items: center;
+  display: flex;
+}
+
+.navigation li {
+  padding: 8px 10px;
+}
+
+.rightNavigation {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 4%;
+}
+
+.rightNavigation li {
+  padding: 8px 10px;
+}
