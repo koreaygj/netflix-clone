@@ -1,12 +1,15 @@
-import Header from "./menu/Header";
-import MainBanner from "./MainBanner";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./routes/Home";
 
 function App() {
   return (
-    <body>
-      <Header />
-      <MainBanner />
-    </body>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

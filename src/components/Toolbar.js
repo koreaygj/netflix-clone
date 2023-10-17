@@ -1,7 +1,7 @@
 import styles from "./Toolbar.module.css";
 import btnStyle from "./Button.module.css";
-import searchIcon from "../images/search-icon.png";
-import alarmIcon from "../images/alarm-icon.png";
+import searchIcon from "./images/search-icon.png";
+import alarmIcon from "./images/alarm-icon.png";
 
 function Toolbar() {
   return (
