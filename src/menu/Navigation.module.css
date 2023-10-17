@@ -1,0 +1,24 @@
+.navigation {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+@media screen and (min-width: 625px) {
+  .toggleMenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .menu {
+    display: none;
+  }
+  .toggleMenu {
+    display: flex;
+    align-items: center;
+  }
+  .subMenu {
+    display: grid;
+    opacity: 1;
+  }
+}

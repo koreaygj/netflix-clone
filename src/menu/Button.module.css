@@ -1,0 +1,10 @@
+.btn {
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px 10px;
+}
+
+.btn :active {
+  background-color: yellow;
+}
