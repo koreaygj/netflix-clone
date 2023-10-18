@@ -5,13 +5,13 @@ import Toolbar from "./Toolbar";
 
 function Header() {
   return (
-    <header>
-      <section className={styles.container}>
+    <div>
+      <header className={styles.container}>
         <img src={logo} className={styles.logo} />
         <Navigation />
         <Toolbar />
-      </section>
-    </header>
+      </header>
+    </div>
   );
 }
 

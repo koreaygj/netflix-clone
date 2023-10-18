@@ -16,7 +16,11 @@ function MainBanner({ prop }) {
     },
   };
   const getMovies = async () => {
-    const json = await (await fetch(`${BaseURL}${prop}`, option)).json();
+    const json = await (
+      await fetch(`${BaseURL}${prop}`, option).catch((error) => {
+        console.log(error);
+      })
+    ).json();
     setMovies(() => {
       return json.results;
     });
