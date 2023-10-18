@@ -1,5 +1,5 @@
 import logo from "./images/netflix-logo.png";
-import styles from "./Header.module.css";
+import styles from "./css/Header.module.css";
 import Navigation from "./Navigation";
 import Toolbar from "./Toolbar";
 

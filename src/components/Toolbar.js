@@ -1,5 +1,5 @@
-import styles from "./Toolbar.module.css";
-import btnStyle from "./Button.module.css";
+import styles from "./css/Toolbar.module.css";
+import btnStyle from "./css/Button.module.css";
 import searchIcon from "./images/search-icon.png";
 import alarmIcon from "./images/alarm-icon.png";
 

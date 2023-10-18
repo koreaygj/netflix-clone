@@ -1,5 +1,5 @@
-import styles from "./Navigation.module.css";
-import btnStyle from "./Button.module.css";
+import styles from "./css/Navigation.module.css";
+import btnStyle from "./css/Button.module.css";
 import { useState } from "react";
 
 function Navigation() {

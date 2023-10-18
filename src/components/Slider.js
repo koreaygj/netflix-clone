@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import TVshow from "./TVshow";
-import styles from "./Slider.module.css";
+import styles from "./css/Slider.module.css";
 import PropTypes from "prop-types";
 
 function MainBanner({ prop }) {
