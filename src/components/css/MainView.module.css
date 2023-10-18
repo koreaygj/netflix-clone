@@ -1,0 +1,15 @@
+.view {
+  display: flex;
+  left: 0;
+}
+.boardView {
+  margin-top: 30%;
+  left: 0;
+}
+
+.slideView {
+  padding: 0.3%;
+  position: relative;
+  box-sizing: border-box;
+  margin: 2vw;
+}

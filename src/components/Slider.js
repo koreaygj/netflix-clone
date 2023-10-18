@@ -3,7 +3,7 @@ import TVshow from "./TVshow";
 import styles from "./css/Slider.module.css";
 import PropTypes from "prop-types";
 
-function MainBanner({ prop }) {
+function MainBanner({ theme, prop }) {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
   const ACCESS_TOKEN = process.env.REACT_APP_MOVIE_TOKEN;
@@ -30,8 +30,9 @@ function MainBanner({ prop }) {
     getMovies();
   }, []);
   return (
-    <main>
-      <section className={styles.slide}>
+    <div>
+      <h2>{theme}</h2>
+      <div className={styles.slide}>
         {loading ? (
           <h2>Loading...</h2>
         ) : (
@@ -45,12 +46,13 @@ function MainBanner({ prop }) {
             );
           })
         )}
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
 
 MainBanner.propTypes = {
+  theme: PropTypes.string.isRequired,
   prop: PropTypes.string.isRequired,
 };
 

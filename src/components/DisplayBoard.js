@@ -22,16 +22,12 @@ function DisplayBoard({ id }) {
         console.log(error);
       })
     ).json();
-    SetVideos((prev) => (prev = json.results));
-    getVideoKey();
+    SetVideos(() => json.results);
+    if (json) getVideoKey();
   };
   const getVideoKey = () => {
     videos.map((video) => {
-      if (video.type === "Teaser") {
-        SetYoutubeKey(() => {
-          return video.key;
-        });
-      }
+      if (video.type === "Teaser") SetYoutubeKey(() => video.key);
     });
   };
   useEffect(() => {
