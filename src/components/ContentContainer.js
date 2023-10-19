@@ -12,16 +12,17 @@ function ContentContainer({ type, id, title, imgSrc }) {
     SetToggleInfo((prev) => !prev);
   };
   return (
-    <div
-      className={styles.contentBox}
-      onMouseEnter={onShowDetail}
-      onMouseLeave={onHideDetail}
-    >
-      <div>
+    <div>
+      <div
+        className={styles.contentBox}
+        onMouseEnter={onShowDetail}
+        onMouseLeave={onHideDetail}
+      >
         <div className={styles.contentPoster}>
-          <img src={`https://image.tmdb.org/t/p/w300/${imgSrc}`} alt={title} />
+          <img src={`https://image.tmdb.org/t/p/w200/${imgSrc}`} alt={title} />
         </div>
-        <div className={styles.contentDetails} hidden={false}>
+        <div className={styles.contentDetails} hidden={toggleInfo}>
+          <h3>{title}</h3>
           {/*<ShowDetails type={type} id={id} />*/}
         </div>
       </div>

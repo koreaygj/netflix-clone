@@ -1,0 +1,29 @@
+.contentBox {
+  padding-inline: 3px;
+}
+.contentPoster {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.contentPoster img {
+  width: 200px;
+}
+
+.contentBox :hover {
+  opacity: 1;
+  z-index: 0;
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.contentDetails {
+  top: 0px;
+  position: absolute;
+  font-size: 20px;
+  transform: none;
+}
+
+.contentDetails p {
+  margin: 10px;
+}
