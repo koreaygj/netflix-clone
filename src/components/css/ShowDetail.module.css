@@ -1,0 +1,10 @@
+.title {
+  top: 70px;
+  width: 100px;
+}
+
+.title :hover {
+  font-size: medium;
+  transition: 0.4s;
+  transform: scale(1.3);
+}

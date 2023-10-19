@@ -11,25 +11,42 @@ function MainView() {
       <div className={styles.boardView}>
         <div className={styles.slideView}>
           <Slider
-            theme={"최고평점 TV프로그램"}
-            prop={"tv/top_rated?language=ko&page=1"}
+            title={"최고평점 TV프로그램"}
+            discover={false}
+            type={"tv"}
+            language={"ko"}
+            country={"KR"}
+            listInfo={"top_rated"}
           />
         </div>
         <div className={styles.slideView}>
           <Slider
-            theme={"인기있는 TV프로그램"}
-            prop={"tv/popular?language=ko&page=1"}
+            title={"인기있는 TV프로그램"}
+            discover={false}
+            type={"tv"}
+            language={"ko"}
+            country={"KR"}
+            listInfo={"popular"}
           />
         </div>
         <div className={styles.slideView}>
           <Slider
-            theme={"최고평점 영화"}
-            prop={"movie/top_rated?language=ko&page=1"}
+            title={"최고평점 영화"}
+            discover={false}
+            type={"movie"}
+            language={"ko"}
+            country={"KR"}
+            listInfo={"top_rated"}
           />
         </div>
         <div className={styles.slideView}>
           <Slider
-            theme={"한국에서 인기있는 영화"}
+            title={"한국에서 인기있는 영화"}
+            discover={true}
+            type={"movie"}
+            language={"ko"}
+            country={"KR"}
+            sortBy={"popularity"}
             prop={
               "discover/movie?include_adult=false&language=ko&page=1&sort_by=popularity.desc&without_genres=10749&with_origin_country=KR"
             }
@@ -37,10 +54,12 @@ function MainView() {
         </div>
         <div className={styles.slideView}>
           <Slider
-            theme={"한국에서 인기있는 TV프로그램"}
-            prop={
-              "discover/tv?include_adult=true&language=ko&page=1&sort_by=popularity.desc&with_origin_country=KR"
-            }
+            title={"한국에서 인기있는 TV프로그램"}
+            discover={true}
+            type={"tv"}
+            language={"ko"}
+            country={"KR"}
+            sortBy={"popularity"}
           />
         </div>
       </div>

@@ -1,3 +1,18 @@
+.contentsSliderSection {
+  width: 100vw;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contentsSliderTitle {
+  display: table-cell;
+  background-color: rgba(1, 1, 1, 1);
+  font-size: 1.5vw;
+}
+
 .slide {
+  margin-top: 2vh;
+  margin-bottom: 3vh;
   display: flex;
+  z-index: 2;
 }

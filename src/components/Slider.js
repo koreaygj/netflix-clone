@@ -1,11 +1,19 @@
-import { useState, useEffect } from "react";
-import TVshow from "./TVshow";
+import { useState, useEffect, useCallback } from "react";
 import styles from "./css/Slider.module.css";
 import PropTypes from "prop-types";
+import ContentContainer from "./ContentContainer";
 
-function MainBanner({ theme, prop }) {
+function Slider({
+  title,
+  discover,
+  type,
+  language,
+  country,
+  listInfo,
+  sortBy,
+}) {
   const [loading, setLoading] = useState(true);
-  const [movies, setMovies] = useState([]);
+  const [contents, setContents] = useState([]);
   const ACCESS_TOKEN = process.env.REACT_APP_MOVIE_TOKEN;
   const BaseURL = "https://api.themoviedb.org/3/";
   const option = {
@@ -15,34 +23,45 @@ function MainBanner({ theme, prop }) {
       Authorization: `Bearer ${ACCESS_TOKEN}`,
     },
   };
-  const getMovies = async () => {
+  const getURL = () => {
+    if (discover === true) {
+      return `${BaseURL}discover/${type}?include_adult=true&language=${language}&page=1&sort_by=${sortBy}.desc&without_genres=10749&with_origin_contry=${country}`;
+    } else {
+      return `${BaseURL}${type}/${listInfo}?language=${language}&page=1`;
+    }
+  };
+  const getContents = useCallback(async () => {
+    const URL = getURL();
     const json = await (
-      await fetch(`${BaseURL}${prop}`, option).catch((error) => {
+      await fetch(URL, option).catch((error) => {
         console.log(error);
       })
     ).json();
-    setMovies(() => {
-      return json.results;
-    });
+    setContents(() => json.results);
+    console.log(contents);
     setLoading(false);
-  };
+  }, [setContents, contents, getURL, option]);
+
   useEffect(() => {
-    getMovies();
+    getContents();
   }, []);
   return (
-    <div>
-      <h2>{theme}</h2>
+    <div className={styles.contentsSliderSection}>
+      <h2 className={styles.contentsSliderTitle}>{title}</h2>
       <div className={styles.slide}>
         {loading ? (
-          <h2>Loading...</h2>
+          <h1>Loading...</h1>
         ) : (
-          movies.map((movie) => {
+          contents.map((content) => {
             return (
-              <TVshow
-                id={movie.id}
-                title={movie.name}
-                imgSrc={movie.backdrop_path}
-              />
+              <div>
+                <ContentContainer
+                  type={type}
+                  id={content.id}
+                  title={type === "tv" ? content.name : content.title}
+                  imgSrc={content.backdrop_path}
+                />
+              </div>
             );
           })
         )}
@@ -51,9 +70,14 @@ function MainBanner({ theme, prop }) {
   );
 }
 
-MainBanner.propTypes = {
-  theme: PropTypes.string.isRequired,
-  prop: PropTypes.string.isRequired,
+Slider.propTypes = {
+  title: PropTypes.string.isRequired,
+  discover: PropTypes.bool,
+  type: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  listInfo: PropTypes.string,
+  sortBy: PropTypes.string,
 };
 
-export default MainBanner;
+export default Slider;

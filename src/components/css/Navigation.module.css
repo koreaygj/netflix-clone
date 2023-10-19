@@ -3,6 +3,7 @@
   list-style: none;
   align-items: center;
 }
+
 @media screen and (min-width: 625px) {
   .toggleMenu {
     display: none;

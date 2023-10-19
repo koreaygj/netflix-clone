@@ -9,8 +9,8 @@
 
 .video {
   position: absolute;
-  top: -4em;
   width: 100%;
+  top: -4em;
   height: 60%;
   display: block;
 }
