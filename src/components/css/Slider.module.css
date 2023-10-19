@@ -1,18 +1,42 @@
 .contentsSliderSection {
-  width: 100vw;
-  overflow: hidden;
   z-index: 1;
+  overflow: hidden;
 }
 
 .contentsSliderTitle {
-  display: table-cell;
-  background-color: rgba(1, 1, 1, 1);
   font-size: 1.5vw;
 }
 
 .slide {
   margin-top: 2vh;
-  margin-bottom: 3vh;
+  margin-bottom: 20px;
   display: flex;
   z-index: 2;
+  transition: 1s;
+}
+
+.leftBtn {
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 200px;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.rightBtn {
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 100px;
+  justify-content: center;
+  position: absolute;
+  cursor: pointer;
+  z-index: 3;
 }
