@@ -2,11 +2,11 @@ import { useCallback, useEffect, useState } from "react";
 import styles from "./css/DisplayBoard.module.css";
 
 function DisplayBoard({ id }) {
+  const [toPlay, setToPlay] = useState(false);
   const [videos, SetVideos] = useState([]);
   const [youtubeKey, SetYoutubeKey] = useState("");
   const ACCESS_TOKEN = process.env.REACT_APP_MOVIE_TOKEN;
   const BaseURL = "https://api.themoviedb.org/3/";
-
   const option = {
     method: "GET",
     headers: {
@@ -21,14 +21,18 @@ function DisplayBoard({ id }) {
         console.log(error);
       })
     ).json();
-    console.log(json.returns);
+
+    console.log(json);
     SetVideos(() => json.results);
-    if (json) getVideoKey();
+    if (json) getVideoKey(json);
   }, [videos]);
-  const getVideoKey = () => {
-    videos.map((video) => {
+  const getVideoKey = (json) => {
+    json.results.map((video) => {
       if (video.type === "Teaser") SetYoutubeKey(() => video.key);
     });
+  };
+  const playVideo = () => {
+    setToPlay((prev) => !prev);
   };
   useEffect(() => {
     getRecommendMovies();
