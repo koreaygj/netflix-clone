@@ -56,18 +56,22 @@ function DisplayBoard({ id }) {
         onMouseEnter={() => playVideo()}
         onMouseLeave={() => playVideo()}
       >
-        <img
-          src={`https://image.tmdb.org/t/p/original${postImg}`}
-          className={toPlay ? styles.posterOff : styles.posterOn}
-        />
-        <iframe
-          className={styles.videoOn}
-          src={`https://www.youtube.com/embed/${youtubeKey}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1`}
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
+        <div className={styles.poster}>
+          <img
+            src={`https://image.tmdb.org/t/p/original${postImg}`}
+            className={toPlay ? styles.posterOff : styles.posterOn}
+          />
+        </div>
+        <div>
+          <iframe
+            className={toPlay ? styles.videoOn : styles.videoOff}
+            src={`https://www.youtube.com/embed/${youtubeKey}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1`}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
   );
