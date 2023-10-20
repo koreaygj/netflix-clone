@@ -45,21 +45,21 @@ function Slider({
   };
 
   const goPrev = () => {
-    if (slide < 0) setSlide((cur) => cur + 40);
+    if (slide < 0) setSlide((cur) => cur + 60);
     console.log(slide);
   };
 
   const goNext = () => {
-    if (slide >= -300) setSlide((cur) => cur - 40);
+    if (slide >= -240) setSlide((cur) => cur - 60);
     console.log(slide);
   };
 
   const isLeftEnd = () => {
-    return slide <= 0 ? true : false;
+    return slide >= 0 ? true : false;
   };
 
   const isRightEnd = () => {
-    return slide >= 300 ? true : false;
+    return slide < -240 ? true : false;
   };
 
   useEffect(() => {
@@ -71,14 +71,14 @@ function Slider({
       <div
         className={styles.leftBtn}
         onClick={goPrev}
-        style={{ display: isLeftEnd() ? "" : "" }}
+        style={{ display: isLeftEnd() ? "none" : "" }}
       >
         <img src={leftButtonImage} />
       </div>
       <div
         className={styles.rightBtn}
         onClick={goNext}
-        style={{ display: isRightEnd() ? "" : "" }}
+        style={{ display: isRightEnd() ? "none" : "" }}
       >
         <img src={rightButtonImage} />
       </div>
