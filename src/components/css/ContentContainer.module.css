@@ -10,14 +10,15 @@
   width: 200px;
 }
 
-.contentBox :hover {
+.contentBox:hover {
   opacity: 1;
   z-index: 0;
-  transform: scale(1.05);
   transition: transform 0.3s;
+  transform: scale(1.5);
 }
 
 .contentDetails {
+  background-color: rgba(1, 1, 1, 0.7);
   top: 0px;
   position: absolute;
   font-size: 20px;

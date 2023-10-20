@@ -2,11 +2,7 @@
   z-index: 1;
   overflow: hidden;
   animation: fadeIn 3s;
-  background-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.7) 70%,
-    transparent
-  );
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 @keyframes fadeIn {

@@ -22,7 +22,7 @@ function ContentContainer({ type, id, title, imgSrc }) {
           <img src={`https://image.tmdb.org/t/p/w200/${imgSrc}`} alt={title} />
         </div>
         <div className={styles.contentDetails} hidden={toggleInfo}>
-          <h3>{title}</h3>
+          <p>{title}</p>
           {/*<ShowDetails type={type} id={id} />*/}
         </div>
       </div>

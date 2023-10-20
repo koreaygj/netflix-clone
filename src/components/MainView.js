@@ -2,14 +2,16 @@ import Slider from "./Slider";
 import Header from "./Header";
 import styles from "./css/MainView.module.css";
 import DisplayBoard from "./DisplayBoard";
+import { useState } from "react";
 
 function MainView() {
+  const [scroll, setScroll] = useState("false");
   return (
     <div className={styles.view}>
       <div>
         <Header />
       </div>
-      <div className={styles.display}>
+      <div className={styles.display} hidden={scroll ? false : true}>
         <DisplayBoard id={"126485"} />
       </div>
       <div className={styles.contentsView}>
@@ -61,6 +63,26 @@ function MainView() {
             language={"ko"}
             country={"KR"}
             sortBy={"popularity"}
+          />
+        </div>
+        <div className={styles.slideView}>
+          <Slider
+            title={"현재 상영중인 영화"}
+            discover={false}
+            type={"movie"}
+            language={"ko"}
+            country={"KR"}
+            listInfo={"now_playing"}
+          />
+        </div>
+        <div className={styles.slideView}>
+          <Slider
+            title={"현재 방영중인 TV프로그램"}
+            discover={false}
+            type={"trending/tv"}
+            language={"ko"}
+            country={"KR"}
+            listInfo={"day"}
           />
         </div>
       </div>
