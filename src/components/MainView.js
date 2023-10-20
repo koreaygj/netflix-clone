@@ -9,10 +9,10 @@ function MainView() {
       <div>
         <Header />
       </div>
+      <div className={styles.display}>
+        <DisplayBoard id={"126485"} />
+      </div>
       <div className={styles.contentsView}>
-        <div className={styles.display}>
-          <DisplayBoard id={"126485"} />
-        </div>
         <div className={styles.slideView}>
           <Slider
             title={"최고평점 TV프로그램"}

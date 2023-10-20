@@ -4,7 +4,6 @@
   width: 100%;
   height: 45vh;
   overflow: hidden;
-  transition: opacity 0.4s cubic-bezier(0.665, 0.235, 0.265, 0.8) 0s;
 }
 
 .posterOn {
